@@ -4,29 +4,37 @@ import com.albert.bootlaunch.Controller.ArticleRestController;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpMethod;
-import org.springframework.stereotype.Controller;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import javax.annotation.Resource;
+
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
 //@Transactional
 @Slf4j
+@RunWith(SpringRunner.class)
+@AutoConfigureMockMvc
 @SpringBootTest
-public class ArticleRestControllerTest {
+public class ArticleRestControllerTest2 {
 
     //mock对象
+    @Resource
     private MockMvc mockMvc;
 
     //mock对象初始化
-    @Before
+    /*@Before
     public void setUp() {
         mockMvc = MockMvcBuilders.standaloneSetup(new ArticleRestController()).build();
-    }
+    }*/
 
     //测试方法
     @Test
