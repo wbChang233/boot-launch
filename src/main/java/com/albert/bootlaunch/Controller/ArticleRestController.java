@@ -41,7 +41,7 @@ public class ArticleRestController {
  
     //获取一篇Article，使用GET方法
 //    @RequestMapping(value = "/article/{id}", method = GET, produces = "application/json")
-    @GetMapping("/article/{id}")
+    @GetMapping("/article/{author}")
     public AjaxResponse getArticle(@PathVariable Long id) {
 
         //使用lombok提供的builder构建对象
