@@ -3,8 +3,10 @@ package com.albert.bootlaunch.Controller;
 import java.util.Date;
 import com.albert.bootlaunch.model.AjaxResponse;
 import com.albert.bootlaunch.model.Article;
+import com.albert.bootlaunch.service.ArticleRestService;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
@@ -12,11 +14,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/rest")
 public class ArticleRestController {
 
+    @Autowired
+    ArticleRestService articleRestService;
+
     //增加一篇Article ，使用POST方法
 //  @RequestMapping(value = "/article", method = POST, produces = "application/json")
     @PostMapping("/article")
     public AjaxResponse saveArticle(@RequestBody Article article) {
         //因为使用了lombok的Slf4j注解，这里可以直接使用log变量打印日志
+        articleRestService.saveArticle(article);
         log.info("saveArticle：{}",article);
         return  AjaxResponse.success(article);
     }
