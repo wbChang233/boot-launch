@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloController {
     @RequestMapping("/hello")
     public Article hello(String name) {
-        Article article = new Article(1L,"albert");
-        article.setAuthor("常文波");
         Article article1 = Article.builder().id(2L).author("金斯").build();
         log.info("测试一下"+ article1);
         return article1;
