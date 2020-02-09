@@ -4,6 +4,9 @@ import java.util.Date;
 import com.albert.bootlaunch.model.AjaxResponse;
 import com.albert.bootlaunch.model.Article;
 import com.albert.bootlaunch.service.ArticleRestService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +20,16 @@ public class ArticleRestController {
     @Autowired
     ArticleRestService articleRestService;
 
-    //增加一篇Article ，使用POST方法
+
+    @ApiOperation(value = "添加文章", notes = "添加新的文章", tags = "Article",httpMethod = "POST")
+    @ApiResponses({
+            @ApiResponse(code=200,message="成功",response=AjaxResponse.class),
+            @ApiResponse(code=400,message="用户输入错误",response=AjaxResponse.class),
+            @ApiResponse(code=500,message="系统内部错误",response=AjaxResponse.class),
+    })
+
+
+        //增加一篇Article ，使用POST方法
 //  @RequestMapping(value = "/article", method = POST, produces = "application/json")
     @PostMapping("/article")
     public AjaxResponse saveArticle(@RequestBody Article article) {
