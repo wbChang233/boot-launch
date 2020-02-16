@@ -1,15 +1,13 @@
 package com.albert.bootlaunch;
 
-import com.albert.bootlaunch.model.Article;
-import com.albert.bootlaunch.service.ArticleRestService;
+import com.albert.bootlaunch.model.ArticleVO;
+import com.albert.bootlaunch.service.ArticleMybatisRestServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpMethod;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -20,7 +18,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import javax.annotation.Resource;
 
-import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
 //@Transactional
@@ -35,7 +32,7 @@ public class ArticleRestControllerTest3 {
     private MockMvc mockMvc;
 
     @MockBean
-    ArticleRestService articleRestService;
+    ArticleMybatisRestServiceImpl articleRestService;
 
     //mock对象初始化
     /*@Before
@@ -59,7 +56,7 @@ public class ArticleRestControllerTest3 {
                 "}";
 
         ObjectMapper objectMapper = new ObjectMapper();
-        Article articleObj = objectMapper.readValue(article, Article.class);
+        ArticleVO articleObj = objectMapper.readValue(article, ArticleVO.class);
         articleRestService.saveArticle(articleObj);
 
         //打桩

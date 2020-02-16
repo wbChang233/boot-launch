@@ -11,7 +11,7 @@ import java.util.List;
 
 @Data
 @Builder
-public class Article {
+public class ArticleVO {
     private long id;
     private String author;
     private String title;
