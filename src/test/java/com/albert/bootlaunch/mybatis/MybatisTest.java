@@ -1,7 +1,7 @@
 package com.albert.bootlaunch.mybatis;
 
-import com.albert.bootlaunch.generator.Article;
-        import com.albert.bootlaunch.generator.ArticleMapper;
+        import com.albert.bootlaunch.generator.test.Article;
+        import com.albert.bootlaunch.generator.test.ArticleMapper;
         import com.github.pagehelper.PageHelper;
         import com.github.pagehelper.PageInfo;
         import org.junit.Test;

@@ -1,13 +1,12 @@
 package com.albert.bootlaunch.service;
 
-import com.albert.bootlaunch.generator.Article;
-import com.albert.bootlaunch.generator.ArticleMapper;
+import com.albert.bootlaunch.generator.test.Article;
+import com.albert.bootlaunch.generator.test.ArticleMapper;
 import com.albert.bootlaunch.model.ArticleVO;
 import com.albert.bootlaunch.utils.DozerUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.dozer.Mapper;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.annotation.Resource;
 import java.util.List;
